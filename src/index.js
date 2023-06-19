@@ -1,6 +1,7 @@
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 
 const selectEl = document.querySelector('.breed-select');
 const divEl = document.querySelector('.cat-info');
@@ -39,6 +40,7 @@ fetchBreeds()
       oprionEl.value = el.id;
       oprionEl.textContent = el.name;
       selectEl.append(oprionEl);
+      selectEl.classList.remove('is-hidden');
     });
     loaderEl.style.display = 'none';
 
